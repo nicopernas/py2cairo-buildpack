@@ -6,7 +6,7 @@ OLD_PWD=`pwd`
 
 cd $CACHE_DIR
 
-wget http://cairographics.org/releases/cairo-1.12.2.tar.xz
+curl --silent --max-time 150 --location http://cairographics.org/releases/cairo-1.12.2.tar.xz
 tar xvfJ cairo-1.12.2.tar.xz 
 cd cairo-1.12.2
 ./configure --prefix=$BUILD_DIR/cairo
@@ -17,7 +17,7 @@ LD_LIBRARY_PATH=$BUILD_DIR/cairo/lib
 export PKG_CONFIG_PATH LD_LIBRARY_PATH
 cd ..
 
-wget http://cairographics.org/releases/py2cairo-1.10.0.tar.bz2
+curl --silent --max-time 150 --location http://cairographics.org/releases/py2cairo-1.10.0.tar.bz2
 tar xvfj py2cairo-1.10.0.tar.bz2
 cd py2cairo-1.10.0
 ./waf configure --prefix=$BUILD_DIR/py2cairo
