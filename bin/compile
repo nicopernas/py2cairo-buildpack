@@ -9,18 +9,13 @@ cd $CACHE_DIR
 curl --silent --max-time 150 --location http://cairographics.org/releases/cairo-1.12.2.tar.xz
 tar xvfJ cairo-1.12.2.tar.xz 
 cd cairo-1.12.2
-./configure --prefix=$BUILD_DIR/cairo
-make 
-make install
-PKG_CONFIG_PATH=$BUILD_DIR/cairo/lib/pkgconfig:$PKG_CONFIG_PATH
-LD_LIBRARY_PATH=$BUILD_DIR/cairo/lib:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH LD_LIBRARY_PATH
+vulcan build
 cd ..
 
-curl --silent --max-time 150 --location http://cairographics.org/releases/py2cairo-1.10.0.tar.bz2
-tar xvfj py2cairo-1.10.0.tar.bz2
-cd py2cairo-1.10.0
-./waf configure --prefix=$BUILD_DIR/py2cairo
-./waf build
-./waf install
-cd $OLD_PWD
+#curl --silent --max-time 150 --location http://cairographics.org/releases/py2cairo-1.10.0.tar.bz2
+#tar xvfj py2cairo-1.10.0.tar.bz2
+#cd py2cairo-1.10.0
+#./waf configure --prefix=$BUILD_DIR/py2cairo
+#./waf build
+#./waf install
+#cd $OLD_PWD
