@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PYTHON_VERSION=$(python --version 2>&1)
+echo "$PYTHON_VERSION detected"
+
+if [[ "$PYTHON_VERSION" =~ 'Python 2' ]] ; then
+  exit 0
+else
+  exit 1
+fi
+
