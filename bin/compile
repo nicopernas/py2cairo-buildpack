@@ -12,8 +12,8 @@ cd cairo-1.12.2
 ./configure --prefix=$BUILD_DIR/cairo
 make 
 make install
-PKG_CONFIG_PATH=$BUILD_DIR/cairo/lib/pkgconfig
-LD_LIBRARY_PATH=$BUILD_DIR/cairo/lib
+PKG_CONFIG_PATH=$BUILD_DIR/cairo/lib/pkgconfig:$PKG_CONFIG_PATH
+LD_LIBRARY_PATH=$BUILD_DIR/cairo/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH LD_LIBRARY_PATH
 cd ..
 
